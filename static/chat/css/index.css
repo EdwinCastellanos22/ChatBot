@@ -1,0 +1,192 @@
+/* 💚 Estilo tipo WhatsApp */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  background-color: #e5ddd5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Zona de mensajes */
+#chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #efeae2;
+  padding: 15px;
+}
+
+/* Burbujas tipo WhatsApp */
+.message-bubble {
+  max-width: 70%;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 15px;
+  margin-bottom: 8px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.message-right {
+  background-color: #d1f8c4; /* verde claro */
+  align-self: flex-end;
+  border-top-right-radius: 0;
+}
+
+.message-left {
+  background-color: #fff;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+  border: 1px solid #ddd;
+}
+
+/* Timestamps */
+.msg-time {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* Animación suave al entrar */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(5px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Caja de texto */
+#chat-form {
+  background: #f0f2f5;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+#message {
+  flex: 1;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  outline: none;
+}
+#message:focus {
+  border-color: #00a884;
+}
+#send-btn {
+  background-color: #00a884;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  margin-left: 10px;
+}
+#send-btn:hover {
+  background-color: #029172;
+}
+
+/* Contenedor principal */
+#chat-messages {
+  background: #efeae2 url('https://media.istockphoto.com/id/1403848173/vector/vector-online-chatting-pattern-online-chatting-seamless-background.jpg?s=612x612&w=0&k=20&c=W3O15mtJiNlJuIgU6S9ZlnzM_yCE27eqwTCfXGYwCSo=') repeat;
+  background-size: contain;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+/* Línea de mensaje */
+.chat-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.chat-line.sent {
+  justify-content: flex-end;
+}
+
+.chat-line.received {
+  justify-content: flex-start;
+}
+
+/* Avatar circular */
+.chat-avatar {
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Burbuja base */
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Burbuja del remitente */
+.sent-bubble {
+  background: linear-gradient(135deg, #dcf8c6, #b9f3a3);
+  border-top-right-radius: 0;
+}
+
+/* Burbuja del receptor */
+.received-bubble {
+  background: #fff;
+  border-top-left-radius: 0;
+}
+
+/* Nombre de usuario */
+.chat-username {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #007bff;
+  margin-bottom: 4px;
+}
+
+/* Texto del mensaje */
+.chat-text {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+/* Hora del mensaje */
+.chat-time {
+  font-size: 0.7rem;
+  color: #777;
+  text-align: right;
+  margin-top: 5px;
+}
+
+/* Animación suave */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Scrollbar elegante */
+#chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+#chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
