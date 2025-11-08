@@ -1,12 +1,12 @@
 // Conexión WebSocket
 const socket = new WebSocket(`ws://${window.location.host}/ws/chat/${username}/`);
 
-// Elementos del DOM
+
 const divMessage = $("#chat-messages");
 const notificationsDiv = $("#notifications");
 const usersDiv = $("#users");
 
-// Manejo de mensajes entrantes
+// Mensajes entrantes
 socket.onmessage = (e) => {
     const data = JSON.parse(e.data);
 
@@ -110,7 +110,7 @@ $("#chat-form").on("submit", (e) => {
     }
 });
 
-// Botón salir
+// Boton salir
 $("#salir").on("click", () => {
     socket.close(1000);
     addNotification("Te has desconectado del chat.");

@@ -9,6 +9,7 @@ from .models import Room, Message
 # Create your views here.
 @login_required
 def index(request):
+    
     rooms = Room.objects.all()
     general = Room.objects.get(id=5)
     messages = Message.objects.filter(room= general)

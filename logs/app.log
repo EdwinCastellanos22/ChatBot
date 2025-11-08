@@ -1,0 +1,240 @@
+INFO 2025-11-08 17:24:26,230 django.utils.autoreload autoreload 21665 139971407470848 Watching for file changes with StatReloader
+INFO 2025-11-08 17:24:30,065 django.channels.server runserver 21665 139971346822848 [mHTTP GET /chat/general/ 200 [0.08, 127.0.0.1:45940][0m
+INFO 2025-11-08 17:24:30,531 django.channels.server runserver 21665 139971346822848 WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:45948]
+INFO 2025-11-08 17:24:30,565 chat consumer 21665 139971346822848 User connected to ws: pempi : General
+INFO 2025-11-08 17:24:30,577 django.channels.server runserver 21665 139971346822848 WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:45948]
+INFO 2025-11-08 17:25:23,475 django.channels.server runserver 21665 139971346822848 [32mHTTP POST /account/logout/ 302 [0.03, 127.0.0.1:45940][0m
+INFO 2025-11-08 17:25:23,532 django.channels.server runserver 21665 139971346822848 [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:45940][0m
+INFO 2025-11-08 17:25:23,840 django.channels.server runserver 21665 139971346822848 WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:45948]
+INFO 2025-11-08 17:25:23,845 chat consumer 21665 139971346822848 User disconnected from ws: pempi : General
+INFO 2025-11-08 17:42:00,141 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-08 17:42:46,079 django.channels.server [33mHTTP GET / 404 [0.04, 192.168.1.7:45496][0m
+WARNING 2025-11-08 17:42:46,354 django.channels.server [33mHTTP GET /favicon.ico 404 [0.07, 192.168.1.7:45496][0m
+INFO 2025-11-08 17:42:54,976 django.channels.server [mHTTP GET /chat/general/ 200 [0.03, 192.168.1.7:45496][0m
+INFO 2025-11-08 17:42:55,166 django.channels.server [36mHTTP GET /static/chat/css/index.css 304 [0.01, 192.168.1.7:45496][0m
+INFO 2025-11-08 17:42:55,193 django.channels.server [mHTTP GET /static/chat/js/index.js 200 [0.03, 192.168.1.7:45480][0m
+INFO 2025-11-08 17:42:55,303 django.channels.server WebSocket HANDSHAKING /ws/chat/PempiCas/ [192.168.1.7:45498]
+INFO 2025-11-08 17:42:55,332 chat User connected to ws: PempiCas : General
+INFO 2025-11-08 17:42:55,352 django.channels.server WebSocket CONNECT /ws/chat/PempiCas/ [192.168.1.7:45498]
+INFO 2025-11-08 17:43:06,673 django.channels.server [32mHTTP POST /account/login/ 302 [0.92, 127.0.0.1:56290][0m
+INFO 2025-11-08 17:43:06,728 django.channels.server [mHTTP GET /chat/general/ 200 [0.02, 127.0.0.1:56290][0m
+INFO 2025-11-08 17:43:06,985 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:56306]
+INFO 2025-11-08 17:43:06,992 chat User connected to ws: pempi : General
+INFO 2025-11-08 17:43:06,994 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:56306]
+INFO 2025-11-08 17:43:46,913 chat Message received from PempiCas: Hola
+INFO 2025-11-08 17:44:11,609 chat Message received from pempi: Hola PempiCas, que tal?
+INFO 2025-11-08 17:44:58,699 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-08 17:44:59,871 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 17:45:13,256 django.channels.server [mHTTP GET /chat/general/ 200 [0.07, 127.0.0.1:51556][0m
+INFO 2025-11-08 17:45:13,607 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:51568]
+INFO 2025-11-08 17:45:13,662 chat User connected to ws: pempi : General
+INFO 2025-11-08 17:45:13,678 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:51568]
+INFO 2025-11-08 17:45:16,948 chat Message received from pempi(General): Hola
+INFO 2025-11-08 17:45:31,525 django.channels.server [mHTTP GET /chat/general/ 200 [0.02, 192.168.1.7:45516][0m
+INFO 2025-11-08 17:45:31,713 django.channels.server WebSocket HANDSHAKING /ws/chat/PempiCas/ [192.168.1.7:45518]
+INFO 2025-11-08 17:45:31,724 chat User connected to ws: PempiCas : General
+INFO 2025-11-08 17:45:31,729 django.channels.server WebSocket CONNECT /ws/chat/PempiCas/ [192.168.1.7:45518]
+INFO 2025-11-08 17:45:35,391 chat Message received from pempi(General): Hola
+INFO 2025-11-08 17:45:40,513 chat Message received from PempiCas(General): Ji
+INFO 2025-11-08 20:18:46,460 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-08 20:19:10,086 django.channels.server [31;1mHTTP GET /api/login/ 405 [0.02, 127.0.0.1:38552][0m
+ERROR 2025-11-08 20:19:17,425 django.channels.server [35;1mHTTP POST /api/login/ 500 [0.12, 127.0.0.1:40322][0m
+WARNING 2025-11-08 20:20:56,671 django.channels.server [33mHTTP GET /api/ 404 [0.04, 127.0.0.1:53470][0m
+WARNING 2025-11-08 20:21:03,494 django.channels.server [31;1mHTTP GET /api/login/ 405 [0.15, 127.0.0.1:53470][0m
+INFO 2025-11-08 20:21:03,571 django.channels.server [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.02, 127.0.0.1:53470][0m
+INFO 2025-11-08 20:21:03,604 django.channels.server [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:53484][0m
+INFO 2025-11-08 20:21:03,609 django.channels.server [mHTTP GET /static/rest_framework/css/default.css 200 [0.03, 127.0.0.1:53496][0m
+INFO 2025-11-08 20:21:03,610 django.channels.server [mHTTP GET /static/rest_framework/js/jquery-3.7.1.min.js 200 [0.03, 127.0.0.1:53504][0m
+INFO 2025-11-08 20:21:03,611 django.channels.server [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.04, 127.0.0.1:53488][0m
+INFO 2025-11-08 20:21:03,618 django.channels.server [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.03, 127.0.0.1:53470][0m
+INFO 2025-11-08 20:21:03,620 django.channels.server [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.03, 127.0.0.1:53508][0m
+INFO 2025-11-08 20:21:03,637 django.channels.server [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.03, 127.0.0.1:53484][0m
+INFO 2025-11-08 20:21:03,646 django.channels.server [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:53496][0m
+INFO 2025-11-08 20:21:03,647 django.channels.server [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:53488][0m
+INFO 2025-11-08 20:21:03,649 django.channels.server [mHTTP GET /static/rest_framework/js/load-ajax-form.js 200 [0.01, 127.0.0.1:53470][0m
+INFO 2025-11-08 20:21:03,689 django.channels.server [mHTTP GET /static/rest_framework/img/grid.png 200 [0.00, 127.0.0.1:53496][0m
+ERROR 2025-11-08 20:21:12,572 django.channels.server [35;1mHTTP POST /api/login/ 500 [0.11, 127.0.0.1:53496][0m
+INFO 2025-11-08 20:21:46,791 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:21:47,858 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-08 20:21:52,433 django.channels.server [31;1mHTTP POST /api/login/ 401 [0.02, 127.0.0.1:37154][0m
+WARNING 2025-11-08 20:21:58,236 django.channels.server [31;1mHTTP GET /api/login/ 405 [0.13, 127.0.0.1:50972][0m
+WARNING 2025-11-08 20:22:01,788 django.channels.server [31;1mHTTP POST /api/login/ 401 [0.03, 127.0.0.1:50972][0m
+WARNING 2025-11-08 20:22:37,061 django.channels.server [31;1mHTTP POST /api/login/ 401 [0.76, 127.0.0.1:50972][0m
+INFO 2025-11-08 20:24:29,639 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:24:30,856 django.utils.autoreload Watching for file changes with StatReloader
+ERROR 2025-11-08 20:24:33,365 django.channels.server [35;1mHTTP POST /api/login/ 500 [0.12, 127.0.0.1:54284][0m
+INFO 2025-11-08 20:25:04,968 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:25:06,041 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 20:26:43,263 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:26:44,391 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 20:27:33,542 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:27:34,870 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 20:27:39,646 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:27:40,972 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-08 20:27:54,385 django.channels.server [31;1mHTTP POST /api/login/ 401 [0.02, 127.0.0.1:58002][0m
+WARNING 2025-11-08 20:28:00,439 django.channels.server [31;1mHTTP POST /api/login/ 401 [0.02, 127.0.0.1:58014][0m
+INFO 2025-11-08 20:31:04,557 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/ChatBot/settings.py changed, reloading.
+INFO 2025-11-08 20:31:05,703 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 20:31:35,922 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/ChatBot/settings.py changed, reloading.
+INFO 2025-11-08 20:31:37,291 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 20:33:08,738 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:33:09,861 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 20:33:46,559 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:33:48,256 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-08 20:34:02,109 django.channels.server [31;1mHTTP POST /api/login/ 401 [0.02, 127.0.0.1:45142][0m
+INFO 2025-11-08 20:34:56,802 django.channels.server [mHTTP POST /api/login/ 200 [0.79, 127.0.0.1:57138][0m
+INFO 2025-11-08 20:35:40,146 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/urls.py changed, reloading.
+INFO 2025-11-08 20:35:41,670 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-08 20:35:48,592 django.channels.server [31;1mHTTP POST /api/logout/ 403 [0.02, 127.0.0.1:57054][0m
+WARNING 2025-11-08 20:37:17,998 django.channels.server [31;1mHTTP POST /api/logout/ 403 [0.01, 127.0.0.1:37314][0m
+WARNING 2025-11-08 20:37:49,299 django.channels.server [31;1mHTTP POST /api/logout/ 403 [0.01, 127.0.0.1:49550][0m
+WARNING 2025-11-08 20:37:59,955 django.channels.server [31;1mHTTP POST /api/logout/ 403 [0.02, 127.0.0.1:59108][0m
+WARNING 2025-11-08 20:38:04,524 django.channels.server [31;1mHTTP POST /api/logout/ 403 [0.02, 127.0.0.1:33848][0m
+INFO 2025-11-08 20:38:20,020 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-08 20:38:21,168 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-08 20:39:00,368 django.channels.server [31;1mHTTP POST /api/logout/ 403 [0.05, 127.0.0.1:39038][0m
+INFO 2025-11-08 20:39:45,643 django.channels.server [32mHTTP GET /api/logout 301 [0.07, 127.0.0.1:39442][0m
+WARNING 2025-11-08 20:39:45,890 django.channels.server [31;1mHTTP GET /api/logout/ 405 [0.22, 127.0.0.1:39442][0m
+INFO 2025-11-08 20:39:46,075 django.channels.server [36mHTTP GET /static/rest_framework/css/bootstrap.min.css 304 [0.01, 127.0.0.1:39456][0m
+INFO 2025-11-08 20:39:46,076 django.channels.server [36mHTTP GET /static/rest_framework/css/prettify.css 304 [0.02, 127.0.0.1:39442][0m
+INFO 2025-11-08 20:39:46,078 django.channels.server [36mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 304 [0.01, 127.0.0.1:39470][0m
+INFO 2025-11-08 20:39:46,083 django.channels.server [36mHTTP GET /static/rest_framework/css/default.css 304 [0.02, 127.0.0.1:39478][0m
+INFO 2025-11-08 20:39:46,084 django.channels.server [36mHTTP GET /static/rest_framework/js/ajax-form.js 304 [0.02, 127.0.0.1:39498][0m
+INFO 2025-11-08 20:39:46,085 django.channels.server [36mHTTP GET /static/rest_framework/js/jquery-3.7.1.min.js 304 [0.02, 127.0.0.1:39494][0m
+INFO 2025-11-08 20:39:46,107 django.channels.server [36mHTTP GET /static/rest_framework/js/default.js 304 [0.01, 127.0.0.1:39478][0m
+INFO 2025-11-08 20:39:46,108 django.channels.server [36mHTTP GET /static/rest_framework/js/prettify-min.js 304 [0.01, 127.0.0.1:39470][0m
+INFO 2025-11-08 20:39:46,109 django.channels.server [36mHTTP GET /static/rest_framework/js/bootstrap.min.js 304 [0.02, 127.0.0.1:39442][0m
+INFO 2025-11-08 20:39:46,109 django.channels.server [36mHTTP GET /static/rest_framework/js/csrf.js 304 [0.02, 127.0.0.1:39456][0m
+INFO 2025-11-08 20:39:46,110 django.channels.server [36mHTTP GET /static/rest_framework/js/load-ajax-form.js 304 [0.01, 127.0.0.1:39498][0m
+INFO 2025-11-08 20:39:46,267 django.channels.server [36mHTTP GET /static/rest_framework/img/grid.png 304 [0.00, 127.0.0.1:39498][0m
+INFO 2025-11-08 20:39:51,495 django.channels.server [mHTTP OPTIONS /api/logout/ 200 [0.04, 127.0.0.1:39498][0m
+INFO 2025-11-08 20:39:54,583 django.channels.server [mHTTP OPTIONS /api/logout/ 200 [0.03, 127.0.0.1:39498][0m
+INFO 2025-11-08 20:41:54,156 django.channels.server [mHTTP GET /chat/general/ 200 [0.07, 127.0.0.1:35094][0m
+INFO 2025-11-08 20:41:54,497 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:35110]
+INFO 2025-11-08 20:41:54,552 chat User connected to ws: pempi : General
+INFO 2025-11-08 20:41:54,591 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:35110]
+INFO 2025-11-08 20:41:57,027 django.channels.server [mHTTP POST /api/logout/ 200 [0.11, 127.0.0.1:35094][0m
+INFO 2025-11-08 20:41:57,312 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:35110]
+INFO 2025-11-08 20:41:57,316 chat User disconnected from ws: pempi : General
+WARNING 2025-11-08 20:42:46,172 django.channels.server [33mHTTP GET / 404 [0.04, 127.0.0.1:35094][0m
+WARNING 2025-11-08 20:43:05,708 django.channels.server [31;1mHTTP GET /api/login/ 405 [0.04, 127.0.0.1:35094][0m
+INFO 2025-11-08 20:43:05,875 django.channels.server [36mHTTP GET /static/rest_framework/css/bootstrap.min.css 304 [0.01, 127.0.0.1:35094][0m
+INFO 2025-11-08 20:43:05,943 django.channels.server [36mHTTP GET /static/rest_framework/css/default.css 304 [0.04, 127.0.0.1:53960][0m
+INFO 2025-11-08 20:43:05,946 django.channels.server [36mHTTP GET /static/rest_framework/css/prettify.css 304 [0.04, 127.0.0.1:53946][0m
+INFO 2025-11-08 20:43:05,949 django.channels.server [36mHTTP GET /static/rest_framework/js/ajax-form.js 304 [0.03, 127.0.0.1:53984][0m
+INFO 2025-11-08 20:43:05,956 django.channels.server [36mHTTP GET /static/rest_framework/js/csrf.js 304 [0.04, 127.0.0.1:53990][0m
+INFO 2025-11-08 20:43:05,957 django.channels.server [36mHTTP GET /static/rest_framework/js/jquery-3.7.1.min.js 304 [0.05, 127.0.0.1:53974][0m
+INFO 2025-11-08 20:43:05,957 django.channels.server [36mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 304 [0.06, 127.0.0.1:35094][0m
+INFO 2025-11-08 20:43:05,984 django.channels.server [36mHTTP GET /static/rest_framework/js/bootstrap.min.js 304 [0.01, 127.0.0.1:53960][0m
+INFO 2025-11-08 20:43:05,985 django.channels.server [36mHTTP GET /static/rest_framework/js/prettify-min.js 304 [0.01, 127.0.0.1:53946][0m
+INFO 2025-11-08 20:43:05,986 django.channels.server [36mHTTP GET /static/rest_framework/js/default.js 304 [0.01, 127.0.0.1:53984][0m
+INFO 2025-11-08 20:43:05,986 django.channels.server [36mHTTP GET /static/rest_framework/js/load-ajax-form.js 304 [0.01, 127.0.0.1:53990][0m
+WARNING 2025-11-08 20:43:09,179 django.channels.server [33mHTTP GET /api/ 404 [0.04, 127.0.0.1:53990][0m
+WARNING 2025-11-08 20:43:21,113 django.channels.server [33mHTTP GET /account/ 404 [0.04, 127.0.0.1:53990][0m
+INFO 2025-11-08 20:44:26,613 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/urls.py changed, reloading.
+INFO 2025-11-08 20:44:27,760 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 20:44:41,456 django.channels.server [mHTTP GET /chat/general/ 200 [0.09, 127.0.0.1:36146][0m
+INFO 2025-11-08 20:44:41,724 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:36156]
+INFO 2025-11-08 20:44:41,755 chat User connected to ws: pempi : General
+INFO 2025-11-08 20:44:41,771 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:36156]
+INFO 2025-11-08 20:44:57,848 chat Message received from pempi(General): Hola
+INFO 2025-11-08 20:45:01,137 django.channels.server [32mHTTP POST /account/logout/ 302 [0.04, 127.0.0.1:36146][0m
+INFO 2025-11-08 20:45:01,182 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:36146][0m
+INFO 2025-11-08 20:45:01,458 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:36156]
+INFO 2025-11-08 20:45:01,460 chat User disconnected from ws: pempi : General
+INFO 2025-11-08 20:48:15,887 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:44032][0m
+INFO 2025-11-08 20:49:27,465 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:57512][0m
+INFO 2025-11-08 20:50:41,391 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:42072][0m
+INFO 2025-11-08 20:54:24,458 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:47846][0m
+INFO 2025-11-08 20:54:24,692 django.channels.server [mHTTP GET /static/login/css/login.css 200 [0.01, 127.0.0.1:47846][0m
+INFO 2025-11-08 20:54:30,202 django.channels.server [mHTTP GET /account/login/ 200 [0.06, 127.0.0.1:47846][0m
+INFO 2025-11-08 20:54:30,677 django.channels.server [mHTTP GET /static/login/css/login.css 200 [0.01, 127.0.0.1:47846][0m
+WARNING 2025-11-08 20:54:31,133 django.channels.server [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:47846][0m
+INFO 2025-11-08 20:55:19,072 django.channels.server [32mHTTP POST /account/login/ 302 [1.12, 127.0.0.1:47846][0m
+INFO 2025-11-08 20:55:19,120 django.channels.server [mHTTP GET /chat/general/ 200 [0.03, 127.0.0.1:47846][0m
+INFO 2025-11-08 20:55:19,359 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:49296]
+INFO 2025-11-08 20:55:19,370 chat User connected to ws: pempi : General
+INFO 2025-11-08 20:55:19,378 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:49296]
+INFO 2025-11-08 20:58:05,855 django.channels.server [32mHTTP POST /account/logout/ 302 [0.02, 127.0.0.1:39468][0m
+INFO 2025-11-08 20:58:05,899 django.channels.server [mHTTP GET /account/login/ 200 [0.01, 127.0.0.1:39468][0m
+INFO 2025-11-08 20:58:06,027 django.channels.server [36mHTTP GET /static/login/css/login.css 304 [0.00, 127.0.0.1:39468][0m
+INFO 2025-11-08 20:58:06,316 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:49296]
+INFO 2025-11-08 20:58:06,319 chat User disconnected from ws: pempi : General
+INFO 2025-11-08 20:59:04,604 django.channels.server [32mHTTP POST /account/login/ 302 [1.07, 127.0.0.1:39468][0m
+INFO 2025-11-08 20:59:04,662 django.channels.server [mHTTP GET /chat/general/ 200 [0.02, 127.0.0.1:39468][0m
+INFO 2025-11-08 20:59:04,922 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:41468]
+INFO 2025-11-08 20:59:04,947 chat User connected to ws: pempi : General
+INFO 2025-11-08 20:59:04,957 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:41468]
+INFO 2025-11-08 20:59:12,243 chat Message received from pempi(General): Hola
+INFO 2025-11-08 21:57:18,444 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 21:57:22,435 django.channels.server [mHTTP GET /chat/general/ 200 [0.07, 127.0.0.1:35082][0m
+INFO 2025-11-08 21:57:22,749 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:35084]
+INFO 2025-11-08 21:57:22,789 chat User connected to ws: pempi : General
+INFO 2025-11-08 21:57:22,800 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:35084]
+WARNING 2025-11-08 21:57:26,619 django.channels.server [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.02, 127.0.0.1:35082][0m
+INFO 2025-11-08 21:57:48,391 chat Message received from pempi(General): Hola
+INFO 2025-11-08 22:00:53,242 django.channels.server [mHTTP GET /chat/general/ 200 [0.03, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:00:53,295 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:35084]
+INFO 2025-11-08 22:00:53,297 chat User disconnected from ws: pempi : General
+WARNING 2025-11-08 22:00:53,415 django.channels.server [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:00:54,029 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:53874]
+INFO 2025-11-08 22:00:54,039 chat User connected to ws: pempi : General
+INFO 2025-11-08 22:00:54,041 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:53874]
+INFO 2025-11-08 22:01:32,916 django.channels.server [mHTTP GET /chat/general/ 200 [0.02, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:01:32,966 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:53874]
+INFO 2025-11-08 22:01:32,968 chat User disconnected from ws: pempi : General
+WARNING 2025-11-08 22:01:33,043 django.channels.server [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:01:33,606 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:57582]
+INFO 2025-11-08 22:01:33,615 chat User connected to ws: pempi : General
+INFO 2025-11-08 22:01:33,617 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:57582]
+INFO 2025-11-08 22:01:54,689 django.channels.server [mHTTP GET /chat/general/ 200 [0.02, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:01:54,760 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:57582]
+INFO 2025-11-08 22:01:54,769 chat User disconnected from ws: pempi : General
+WARNING 2025-11-08 22:01:55,014 django.channels.server [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.08, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:01:55,104 django.channels.server [mHTTP GET /static/chat/css/index.css 200 [0.04, 127.0.0.1:41414][0m
+INFO 2025-11-08 22:01:55,106 django.channels.server [mHTTP GET /static/chat/js/index.js 200 [0.05, 127.0.0.1:41400][0m
+INFO 2025-11-08 22:01:55,736 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:41422]
+INFO 2025-11-08 22:01:55,751 chat User connected to ws: pempi : General
+INFO 2025-11-08 22:01:55,762 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:41422]
+WARNING 2025-11-08 22:01:56,083 django.channels.server [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:41414][0m
+INFO 2025-11-08 22:02:09,082 django.channels.server [mHTTP GET /chat/general/ 200 [0.02, 127.0.0.1:41414][0m
+INFO 2025-11-08 22:02:09,135 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:41422]
+INFO 2025-11-08 22:02:09,144 chat User disconnected from ws: pempi : General
+WARNING 2025-11-08 22:02:09,317 django.channels.server [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:41414][0m
+INFO 2025-11-08 22:02:09,321 django.channels.server [mHTTP GET /static/chat/css/index.css 200 [0.01, 127.0.0.1:41400][0m
+INFO 2025-11-08 22:02:09,342 django.channels.server [mHTTP GET /static/chat/js/index.js 200 [0.01, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:02:09,884 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:51112]
+INFO 2025-11-08 22:02:09,916 chat User connected to ws: pempi : General
+INFO 2025-11-08 22:02:09,926 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:51112]
+WARNING 2025-11-08 22:02:10,108 django.channels.server [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:53870][0m
+INFO 2025-11-08 22:03:54,624 django.channels.server [mHTTP GET /chat/general/ 200 [0.03, 127.0.0.1:55120][0m
+INFO 2025-11-08 22:03:54,699 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:51112]
+INFO 2025-11-08 22:03:54,707 chat User disconnected from ws: pempi : General
+WARNING 2025-11-08 22:03:54,856 django.channels.server [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:55120][0m
+INFO 2025-11-08 22:03:54,861 django.channels.server [mHTTP GET /static/chat/js/index.js 200 [0.03, 127.0.0.1:55140][0m
+INFO 2025-11-08 22:03:54,862 django.channels.server [mHTTP GET /static/chat/css/index.css 200 [0.03, 127.0.0.1:55126][0m
+INFO 2025-11-08 22:03:55,484 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:55150]
+INFO 2025-11-08 22:03:55,492 chat User connected to ws: pempi : General
+INFO 2025-11-08 22:03:55,495 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:55150]
+WARNING 2025-11-08 22:03:55,937 django.channels.server [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:55126][0m
+INFO 2025-11-08 22:04:05,582 chat Message received from pempi(General): Hola
+INFO 2025-11-08 22:04:22,798 django.channels.server [36mHTTP GET /static/chat/css/index.css 304 [0.01, 127.0.0.1:55126][0m
+WARNING 2025-11-08 22:04:22,878 django.channels.server [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:55126][0m
+INFO 2025-11-08 22:06:24,570 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-08 22:06:26,199 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 22:06:38,259 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/routing.py changed, reloading.
+INFO 2025-11-08 22:06:39,308 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-08 22:06:41,766 django.channels.server [mHTTP GET /chat/general/ 200 [0.05, 127.0.0.1:33778][0m
+INFO 2025-11-08 22:06:41,959 django.channels.server [mHTTP GET /static/chat/css/index.css 200 [0.01, 127.0.0.1:33778][0m
+INFO 2025-11-08 22:06:41,963 django.channels.server [mHTTP GET /static/chat/js/index.js 200 [0.01, 127.0.0.1:33788][0m
+INFO 2025-11-08 22:06:42,457 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:33800]
+INFO 2025-11-08 22:06:42,476 chat User connected to ws: pempi : General
+INFO 2025-11-08 22:06:42,498 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:33800]
+WARNING 2025-11-08 22:06:43,033 django.channels.server [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:33788][0m
+INFO 2025-11-08 22:07:47,133 django.channels.server [32mHTTP POST /account/logout/ 302 [0.02, 127.0.0.1:56030][0m
+INFO 2025-11-08 22:07:47,183 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:56030][0m
+INFO 2025-11-08 22:07:47,464 django.channels.server [36mHTTP GET /static/login/css/login.css 304 [0.00, 127.0.0.1:56030][0m
+INFO 2025-11-08 22:07:47,507 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:33800]
+INFO 2025-11-08 22:07:47,509 chat User disconnected from ws: pempi : General
+INFO 2025-11-08 22:07:52,957 django.channels.server [mHTTP GET /account/register/ 200 [0.01, 127.0.0.1:56030][0m
+INFO 2025-11-08 22:07:59,795 django.channels.server [mHTTP GET /account/login/ 200 [0.01, 127.0.0.1:56030][0m

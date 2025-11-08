@@ -1,0 +1,103 @@
+/* ===== LOGIN BACKGROUND – DARK NEON (Blue + Purple) ===== */
+
+:root {
+  --card-bg: rgba(255, 255, 255, 0.14);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --text-light: #fff;
+  --primary: #6c5ce7;
+  --primary-hover: #4e3dc7;
+}
+
+/* Fullscreen Container */
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-light);
+  background: radial-gradient(circle at 20% 30%, #3a0ca3, #000428 70%);
+  overflow: hidden;
+}
+
+/* Animated Gradient Overlay */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 70%, #7209b7, transparent 60%),
+              radial-gradient(circle at 20% 20%, #4361ee, transparent 55%),
+              radial-gradient(circle at 70% 40%, #4cc9f0, transparent 50%);
+  filter: blur(80px);
+  animation: neonMove 16s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes neonMove {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-50px, -40px) scale(1.2); }
+}
+
+/* ===== LOGIN CARD (Glassmorphism) ===== */
+.card-login {
+  width: 380px;
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  animation: fadeInUp 0.7s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Icon Box */
+.icon-box {
+  background: rgba(255, 255, 255, 0.22);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+/* Inputs */
+.form-control {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  border: none;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--text-light);
+  box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+a {
+  color: var(--text-light);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #eaeaea;
+}

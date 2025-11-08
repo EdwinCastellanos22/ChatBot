@@ -5,6 +5,9 @@ from redis.asyncio import Redis
 import datetime
 import json
 
+import logging
+logger = logging.getLogger('chat')
+
 
 # CHAT GENERAL
 class ChatConsumer(AsyncWebsocketConsumer):
@@ -15,6 +18,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
             "username"
         )
         self.room_name = "General"
+        
+        logger.info(f"User connected to ws: {self.username} : {self.room_name}")
+
 
         # connect to redis
         self.redis = Redis(host="127.0.0.1", port=6379, decode_responses=True)
@@ -35,18 +41,18 @@ class ChatConsumer(AsyncWebsocketConsumer):
             }
         )
 
-        # send last 50 messages
-        last_messages = await self.get_messages()
-        for msg in last_messages:
-            await self.channel_layer.group_send(
-                self.room_name,
-                {
-                    "type": "chat_message",
-                    "message": msg["content"],
-                    "username": msg["username"],
-                    "timestamp": msg["timestamp"],
-                },
-            )
+        # # send last 50 messages
+        # last_messages = await self.get_messages()
+        # for msg in last_messages:
+        #     await self.channel_layer.group_send(
+        #         self.room_name,
+        #         {
+        #             "type": "chat_message",
+        #             "message": msg["content"],
+        #             "username": msg["username"],
+        #             "timestamp": msg["timestamp"],
+        #         },
+        #     )
 
         await self.channel_layer.group_send(
             self.room_name,
@@ -65,6 +71,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
     # --- Desconnect ---
     async def disconnect(self, code):
         await self.redis.srem(self.room_name, self.username)
+        logger.info(f"User disconnected from ws: {self.username} : {self.room_name}")
 
         await self.channel_layer.group_send(
             self.room_name,
@@ -83,9 +90,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, text_data):
         data = json.loads(text_data)
-        print(data)
         message = data["message"]
         username = self.username
+        
+        logger.info(f"Message received from {username}({self.room_name}): {message}")
 
         # send to users in group
         await self.channel_layer.group_send(
@@ -101,8 +109,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
             },
         )
 
-        # save to DB
-        await self.save_message(self.username, message)
+        # # save to DB
+        # await self.save_message(self.username, message)
 
     async def chat_message(self, event):
         await self.send(
@@ -141,99 +149,3 @@ class ChatConsumer(AsyncWebsocketConsumer):
             "type": "users_list",
             "users": event["users"]
         }))
-
-
-    @database_sync_to_async
-    def save_message(self, user, content):
-        try:
-            room, _ = Room.objects.get_or_create(name="General")
-            Message.objects.create(user=user, room=room, content=content)
-        except Exception as e:
-            print("Error saving message:", e)
-            pass
-
-    @database_sync_to_async
-    def get_messages(self):
-        try:
-            room, _ = Room.objects.get_or_create(name="General")
-            messages = Message.objects.filter(room=room).order_by("-timestamp")[:50]
-            return [
-                {
-                    "username": msg.user.username,
-                    "content": msg.content,
-                    "timestamp": msg.timestamp.isoformat() + "Z",
-                }
-                for msg in messages
-            ][::-1]
-        except Exception as e:
-            print("Error fetching messages:", e)
-            return []
-
-
-# CHAT POR SALA
-class RoomConsumer(AsyncWebsocketConsumer):
-
-    async def connect(self):
-        self.room_name = self.scope["url_route"]["kwargs"]["room_name"]
-        self.room_group_name = f"chat_{self.room_name}"
-        self.user = self.scope["user"]
-        self.username = self.user.username if self.user.is_authenticated else "Anon"
-
-        await self.channel_layer.group_add(self.room_group_name, self.channel_name)
-
-        await self.channel_layer.group_send(
-            self.room_group_name,
-            {
-                "type": "chat_message",
-                "message": f"🔔 {self.username} se ha unido a la sala!",
-                "username": "System",
-                "timestamp": str(datetime.datetime.utcnow().isoformat()) + "Z",
-            },
-        )
-
-        await self.accept()
-
-    async def disconnect(self, code):
-        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
-    async def receive(self, text_data):
-        data = json.loads(text_data)
-        message = data["message"]
-        user = self.scope["user"]
-
-        username = user.username if user.is_authenticated else "Anon"
-
-        # save to DB
-        await self.save_message(
-            self.room_name, user if user.is_authenticated else None, message
-        )
-
-        # send message to room
-        await self.channel_layer.group_send(
-            self.room_group_name,
-            {
-                "type": "chat_message",
-                "message": message,
-                "username": username,
-                "timestamp": str(datetime.datetime.utcnow().isoformat()) + "Z",
-            },
-        )
-
-    async def chat_message(self, event):
-        await self.send(
-            text_data=json.dumps(
-                {
-                    "message": event["message"],
-                    "username": event["username"],
-                    "timestamp": event.get(
-                        "datetime", str(datetime.datetime.utcnow().isoformat())
-                    )
-                    + "Z",
-                }
-            )
-        )
-
-    @database_sync_to_async
-    def save_message(self, roomName, user, content):
-        room, _ = Room.objects.get_or_create(name=roomName)
-        Message.objects.create(user=user, room=room, content=content)

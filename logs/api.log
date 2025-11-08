@@ -1,0 +1,6 @@
+INFO 2025-11-08 20:34:02,101 api Solicitud login: None
+WARNING 2025-11-08 20:34:02,102 api Intento de login fallido para el usuario: None
+INFO 2025-11-08 20:34:56,013 api Solicitud login: pempi
+INFO 2025-11-08 20:34:56,800 api Login exitoso para el usuario: pempi
+INFO 2025-11-08 20:41:56,959 api Solicitud de logout para el usuario: pempi
+INFO 2025-11-08 20:41:56,983 api Logout exitoso para el usuario: pempi

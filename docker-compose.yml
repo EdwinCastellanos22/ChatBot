@@ -1,0 +1,21 @@
+version: '3.12'
+
+services:
+  web:
+    build: .
+    container_name: chatbot_django
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+    volumes:
+      - .:/chatbot
+
+  redis:
+    image: redis:7.2
+    container_name: redis_server
+    ports:
+      - "6379:6379"
