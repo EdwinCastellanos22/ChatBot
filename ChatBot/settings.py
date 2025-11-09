@@ -14,7 +14,7 @@ SECRET_KEY = "django-insecure-our5-16@pl+ah%j8gc30z1e6lwsgfd5xpkvinzn8$ubbujun4v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "192.168.1.8:8000", "192.168.1.8"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "192.168.1.8:8000", "192.168.1.8", "chatbot-np9c.onrender.com"]
 
 
 # Application definition
