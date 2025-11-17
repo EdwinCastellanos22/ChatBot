@@ -1,0 +1,32 @@
+# Django-specific files
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/ # If you are storing user-uploaded files locally and don't want them in version control
+staticfiles/ # If you are collecting static files locally and don't want them in version control
+
+# Virtual Environment
+.env
+venv/
+env/
+
+# IDE-specific files (e.g., PyCharm)
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Other files
+.coverage
+.tox/
+.eggs/
+ChatBot/settings.py
+
+#Docker
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml

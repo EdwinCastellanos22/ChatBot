@@ -1,5 +1,8 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,12 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-our5-16@pl+ah%j8gc30z1e6lwsgfd5xpkvinzn8$ubbujun4v"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", True)
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "192.168.1.8:8000", "192.168.1.8", "chatbot-np9c.onrender.com"]
+
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -126,14 +130,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # SETTINGS REDIS SERVER
-REDIS_HOST = os.environ.get("redis", "localhost")
-
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {"hosts": [(f"{REDIS_HOST}", 6379)]},
-    }
+        "CONFIG": {
+            "hosts": [
+                os.getenv("REDIS_URL"),
+                ],
+        },
+    },
 }
+
 
 
 # SETTINGS LOGIN AND LOGIN REDIRECT
@@ -143,7 +150,6 @@ LOGOUT_REDIRECT_URL = "/account/login/"
 LOGOUT_URL = "/account/logout/"
 
 # LOGGING
-import os
 from pathlib import Path
 from logging.handlers import RotatingFileHandler
 
