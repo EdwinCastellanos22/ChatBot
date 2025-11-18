@@ -1,31 +1,96 @@
-# Django-specific files
+##############################################
+# DJANGO / PYTHON
+##############################################
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
 *.log
 *.pot
-*.pyc
-__pycache__/
-local_settings.py
-db.sqlite3
-media/ # If you are storing user-uploaded files locally and don't want them in version control
-staticfiles/ # If you are collecting static files locally and don't want them in version control
+*.mo
 
-# Virtual Environment
+
+local_settings.py
 .env
+*.env
+.env.*
+
+
+db.sqlite3
+db.sqlite3-journal
+
+##############################################
+# MEDIA & STATIC
+##############################################
+
+media/
+
+staticfiles/
+
+static/
+
+##############################################
+# VIRTUAL ENVS
+##############################################
 venv/
 env/
+ENV/
+.venv/
+.python-version
 
-# IDE-specific files (e.g., PyCharm)
+##############################################
+# IDEs
+##############################################
+
+.vscode/
+
 .idea/
 
-# Operating System files
-.DS_Store
-Thumbs.db
+*.sublime-project
+*.sublime-workspace
 
-# Other files
-.coverage
-.tox/
-.eggs/
-
-#Docker
+##############################################
+# DOCKER
+##############################################
 Dockerfile
 docker-compose.yml
 docker-compose.override.yml
+
+docker-data/
+docker-volumes/
+
+##############################################
+# TESTING
+##############################################
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+pytest_cache/
+.junit/
+
+##############################################
+# NODE / FRONTEND
+##############################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+##############################################
+# OS FILES
+##############################################
+.DS_Store
+Thumbs.db
+
+##############################################
+# OTHER
+##############################################
+*.egg-info/
+.eggs/
+*.pid
+*.log
+*.backup

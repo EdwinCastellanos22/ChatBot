@@ -4,3 +4,7 @@ INFO 2025-11-08 20:34:56,013 api Solicitud login: pempi
 INFO 2025-11-08 20:34:56,800 api Login exitoso para el usuario: pempi
 INFO 2025-11-08 20:41:56,959 api Solicitud de logout para el usuario: pempi
 INFO 2025-11-08 20:41:56,983 api Logout exitoso para el usuario: pempi
+INFO 2025-11-18 21:21:59,013 api [LOGIN] Attempt from: pempi
+WARNING 2025-11-18 21:21:59,933 api [LOGIN] Failed attempt for user: pempi
+INFO 2025-11-18 21:22:49,296 api Solicitud login: pempi
+WARNING 2025-11-18 21:22:50,164 api Intento de login fallido para el usuario: pempi

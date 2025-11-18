@@ -778,3 +778,22 @@ INFO 2025-11-18 02:10:27,888 chat User connected to ws: pempi : General
 INFO 2025-11-18 02:10:28,986 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:52978]
 INFO 2025-11-18 02:13:09,518 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
 INFO 2025-11-18 02:13:12,264 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 21:21:15,609 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-18 21:21:30,746 django.channels.server [31;1mHTTP GET /api/login/ 405 [1.47, 127.0.0.1:39682][0m
+INFO 2025-11-18 21:21:30,894 django.channels.server [36mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 304 [0.02, 127.0.0.1:39684][0m
+INFO 2025-11-18 21:21:30,904 django.channels.server [36mHTTP GET /static/rest_framework/css/prettify.css 304 [0.02, 127.0.0.1:39698][0m
+INFO 2025-11-18 21:21:30,915 django.channels.server [36mHTTP GET /static/rest_framework/css/bootstrap.min.css 304 [0.04, 127.0.0.1:39682][0m
+INFO 2025-11-18 21:21:30,916 django.channels.server [36mHTTP GET /static/rest_framework/css/default.css 304 [0.04, 127.0.0.1:39708][0m
+INFO 2025-11-18 21:21:30,967 django.channels.server [36mHTTP GET /static/rest_framework/js/ajax-form.js 304 [0.05, 127.0.0.1:39738][0m
+INFO 2025-11-18 21:21:30,968 django.channels.server [36mHTTP GET /static/rest_framework/js/bootstrap.min.js 304 [0.05, 127.0.0.1:39698][0m
+INFO 2025-11-18 21:21:30,969 django.channels.server [36mHTTP GET /static/rest_framework/js/jquery-3.7.1.min.js 304 [0.06, 127.0.0.1:39724][0m
+INFO 2025-11-18 21:21:30,970 django.channels.server [36mHTTP GET /static/rest_framework/js/csrf.js 304 [0.06, 127.0.0.1:39684][0m
+INFO 2025-11-18 21:21:30,982 django.channels.server [36mHTTP GET /static/rest_framework/js/default.js 304 [0.03, 127.0.0.1:39708][0m
+INFO 2025-11-18 21:21:30,989 django.channels.server [36mHTTP GET /static/rest_framework/js/prettify-min.js 304 [0.04, 127.0.0.1:39682][0m
+INFO 2025-11-18 21:21:31,000 django.channels.server [36mHTTP GET /static/rest_framework/js/load-ajax-form.js 304 [0.02, 127.0.0.1:39738][0m
+INFO 2025-11-18 21:21:31,111 django.channels.server [36mHTTP GET /static/rest_framework/img/grid.png 304 [0.01, 127.0.0.1:39738][0m
+WARNING 2025-11-18 21:21:32,807 django.channels.server [33mHTTP GET /favicon.ico 404 [1.35, 127.0.0.1:39738][0m
+ERROR 2025-11-18 21:21:59,970 django.channels.server [35;1mHTTP POST /api/login/ 500 [2.60, 127.0.0.1:39738][0m
+INFO 2025-11-18 21:22:19,510 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/api/views.py changed, reloading.
+INFO 2025-11-18 21:22:20,857 django.utils.autoreload Watching for file changes with StatReloader
+WARNING 2025-11-18 21:22:50,189 django.channels.server [31;1mHTTP POST /api/login/ 401 [2.52, 127.0.0.1:45374][0m

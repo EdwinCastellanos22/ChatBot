@@ -18,11 +18,14 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG")
 
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"] if DEBUG else [
-    "pempi2022.pythonanywhere.com", 
-    "www.pempi2022.pythonanywhere.com"
-    ".supabase.co"
+ALLOWED_HOSTS = (
+    ["127.0.0.1", "localhost"]
+    if DEBUG
+    else [
+        "pempi2022.pythonanywhere.com",
+        "www.pempi2022.pythonanywhere.com" ".supabase.co",
     ]
+)
 
 
 # Application definition
@@ -89,7 +92,7 @@ DATABASES = {
         "PORT": "5432",
         "OPTIONS": {
             "sslmode": "require",
-        }
+        },
     }
 }
 
@@ -150,11 +153,10 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             "hosts": [
                 os.getenv("REDIS_URL"),
-                ],
+            ],
         },
     },
 }
-
 
 
 # SETTINGS LOGIN AND LOGIN REDIRECT

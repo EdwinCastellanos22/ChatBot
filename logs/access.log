@@ -189,3 +189,7 @@ INFO 2025-11-18 02:07:19,546 access POST /account/login/ 302 4985.46ms User: pem
 INFO 2025-11-18 02:07:22,000 access GET /chat/general/ 200 1799.51ms User: pempi
 INFO 2025-11-18 02:08:12,259 access GET /chat/futbol/ 404 39.59ms User: pempi
 INFO 2025-11-18 02:10:25,609 access GET /chat/general/ 200 1990.31ms User: pempi
+INFO 2025-11-18 21:21:30,738 access GET /api/login/ 405 1441.52ms User: pempi
+INFO 2025-11-18 21:21:32,804 access GET /favicon.ico 404 19.18ms User: pempi
+INFO 2025-11-18 21:21:59,969 access POST /api/login/ 500 2593.3ms User: pempi
+INFO 2025-11-18 21:22:50,187 access POST /api/login/ 401 2508.76ms User: pempi
