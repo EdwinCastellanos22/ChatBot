@@ -693,3 +693,88 @@ INFO 2025-11-17 00:22:29,312 django.channels.server WebSocket HANDSHAKING /ws/ch
 INFO 2025-11-17 00:22:29,501 chat User connected to ws: pempi : General
 INFO 2025-11-17 00:22:30,318 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:41886]
 INFO 2025-11-17 00:22:42,951 chat Message received from pempi(General): Hola Mundo
+INFO 2025-11-17 17:23:46,146 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-17 23:59:31,448 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-17 23:59:38,128 django.channels.server [32mHTTP GET /chat/general/ 302 [1.59, 127.0.0.1:41270][0m
+INFO 2025-11-17 23:59:38,219 django.channels.server [mHTTP GET /account/login/?next=/chat/general/ 200 [0.05, 127.0.0.1:41270][0m
+INFO 2025-11-17 23:59:38,607 django.channels.server [36mHTTP GET /static/login/css/login.css 304 [0.01, 127.0.0.1:41270][0m
+WARNING 2025-11-17 23:59:39,472 django.channels.server [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:41270][0m
+INFO 2025-11-17 23:59:46,891 django.channels.server [mHTTP POST /account/login/?next=/chat/general/ 200 [3.68, 127.0.0.1:41270][0m
+INFO 2025-11-18 00:01:02,559 django.channels.server [mHTTP GET /account/register/ 200 [0.02, 127.0.0.1:52788][0m
+INFO 2025-11-18 00:01:13,092 django.channels.server [mHTTP POST /account/register/ 200 [1.67, 127.0.0.1:52788][0m
+INFO 2025-11-18 00:04:44,345 django.channels.server [32mHTTP POST /account/register/ 302 [4.13, 127.0.0.1:44474][0m
+INFO 2025-11-18 00:04:44,397 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:44474][0m
+INFO 2025-11-18 00:04:56,731 django.channels.server [32mHTTP POST /account/login/ 302 [5.34, 127.0.0.1:44474][0m
+ERROR 2025-11-18 00:05:00,286 django.channels.server [35;1mHTTP GET /chat/general/ 500 [3.53, 127.0.0.1:44474][0m
+INFO 2025-11-18 00:13:30,465 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/views.py changed, reloading.
+INFO 2025-11-18 00:13:32,727 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 00:13:37,782 django.channels.server [mHTTP GET /chat/general/ 200 [1.74, 127.0.0.1:55436][0m
+INFO 2025-11-18 00:13:37,999 django.channels.server [36mHTTP GET /static/chat/css/index.css 304 [0.02, 127.0.0.1:55436][0m
+INFO 2025-11-18 00:13:38,015 django.channels.server [36mHTTP GET /static/chat/js/index.js 304 [0.01, 127.0.0.1:55450][0m
+INFO 2025-11-18 00:13:38,751 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:55452]
+INFO 2025-11-18 00:13:40,426 chat User connected to ws: pempi : General
+INFO 2025-11-18 00:13:41,354 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:55452]
+INFO 2025-11-18 00:13:41,993 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:55452]
+INFO 2025-11-18 00:14:18,037 django.channels.server [mHTTP GET /chat/general/ 200 [1.55, 127.0.0.1:55450][0m
+INFO 2025-11-18 00:14:18,520 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:38072]
+INFO 2025-11-18 00:14:20,135 chat User connected to ws: pempi : General
+INFO 2025-11-18 00:14:20,618 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:38072]
+INFO 2025-11-18 00:15:02,999 chat Message received from pempi(General): Hola Mundo
+INFO 2025-11-18 01:56:21,567 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 01:56:32,664 django.channels.server [mHTTP GET /chat/general/ 200 [2.07, 127.0.0.1:45618][0m
+INFO 2025-11-18 01:56:33,906 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:45630]
+INFO 2025-11-18 01:56:35,734 chat User connected to ws: pempi : General
+INFO 2025-11-18 01:56:36,766 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:45630]
+INFO 2025-11-18 01:56:58,070 django.channels.server [mHTTP GET /chat/general/ 200 [1.74, 127.0.0.1:45618][0m
+INFO 2025-11-18 01:56:58,114 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:45630]
+INFO 2025-11-18 01:56:58,120 chat User disconnected from ws: pempi : General
+INFO 2025-11-18 01:56:58,543 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:59508]
+INFO 2025-11-18 01:57:00,246 chat User connected to ws: pempi : General
+INFO 2025-11-18 01:57:00,885 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:59508]
+INFO 2025-11-18 01:58:41,290 django.channels.server [mHTTP GET /chat/general/ 200 [2.00, 127.0.0.1:51082][0m
+INFO 2025-11-18 01:58:41,395 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:59508]
+INFO 2025-11-18 01:58:41,407 chat User disconnected from ws: pempi : General
+INFO 2025-11-18 01:58:41,916 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:56344]
+INFO 2025-11-18 01:58:43,342 chat User connected to ws: pempi : General
+INFO 2025-11-18 01:58:43,528 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:56344]
+INFO 2025-11-18 02:01:55,214 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-18 02:01:57,770 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 02:02:05,853 django.channels.server [mHTTP GET /chat/general/ 200 [2.04, 127.0.0.1:34878][0m
+INFO 2025-11-18 02:02:06,885 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:34888]
+INFO 2025-11-18 02:02:08,714 chat User connected to ws: pempi : General
+INFO 2025-11-18 02:02:09,881 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:34888]
+INFO 2025-11-18 02:02:11,890 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:34888]
+INFO 2025-11-18 02:03:32,382 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-18 02:03:35,064 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 02:03:41,208 django.channels.server [mHTTP GET /chat/general/ 200 [1.71, 127.0.0.1:35848][0m
+INFO 2025-11-18 02:03:41,814 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:42792]
+INFO 2025-11-18 02:03:43,764 chat User connected to ws: pempi : General
+INFO 2025-11-18 02:03:44,846 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:42792]
+INFO 2025-11-18 02:04:32,717 django.channels.server [32mHTTP POST /account/logout/ 302 [2.19, 127.0.0.1:35848][0m
+INFO 2025-11-18 02:04:32,774 django.channels.server [mHTTP GET /account/login/ 200 [0.02, 127.0.0.1:35848][0m
+INFO 2025-11-18 02:04:33,239 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:42792]
+INFO 2025-11-18 02:04:33,331 chat User disconnected: pempi
+INFO 2025-11-18 02:05:52,983 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-18 02:05:55,723 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 02:07:20,138 django.channels.server [32mHTTP POST /account/login/ 302 [5.60, 127.0.0.1:54818][0m
+INFO 2025-11-18 02:07:22,002 django.channels.server [mHTTP GET /chat/general/ 200 [1.81, 127.0.0.1:54818][0m
+INFO 2025-11-18 02:07:22,445 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:54606]
+INFO 2025-11-18 02:07:23,970 chat User connected to ws: pempi : General
+INFO 2025-11-18 02:07:25,177 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:54606]
+INFO 2025-11-18 02:07:43,747 chat Message from pempi: Hola Chat
+WARNING 2025-11-18 02:08:12,268 django.channels.server [33mHTTP GET /chat/futbol/ 404 [2.02, 127.0.0.1:54818][0m
+INFO 2025-11-18 02:08:12,588 django.channels.server WebSocket DISCONNECT /ws/chat/pempi/ [127.0.0.1:54606]
+INFO 2025-11-18 02:08:12,695 chat User disconnected: pempi
+INFO 2025-11-18 02:08:15,551 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:44924]
+INFO 2025-11-18 02:08:17,283 chat User connected to ws: pempi : General
+INFO 2025-11-18 02:08:17,504 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:44924]
+INFO 2025-11-18 02:08:46,227 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-18 02:08:50,663 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 02:10:13,848 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-18 02:10:17,999 django.utils.autoreload Watching for file changes with StatReloader
+INFO 2025-11-18 02:10:25,616 django.channels.server [mHTTP GET /chat/general/ 200 [2.02, 127.0.0.1:52964][0m
+INFO 2025-11-18 02:10:26,377 django.channels.server WebSocket HANDSHAKING /ws/chat/pempi/ [127.0.0.1:52978]
+INFO 2025-11-18 02:10:27,888 chat User connected to ws: pempi : General
+INFO 2025-11-18 02:10:28,986 django.channels.server WebSocket CONNECT /ws/chat/pempi/ [127.0.0.1:52978]
+INFO 2025-11-18 02:13:09,518 django.utils.autoreload /home/pempi/Proyects/ChatBotDjangoPython/ChatBot/chat/consumer.py changed, reloading.
+INFO 2025-11-18 02:13:12,264 django.utils.autoreload Watching for file changes with StatReloader

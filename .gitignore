@@ -24,7 +24,6 @@ Thumbs.db
 .coverage
 .tox/
 .eggs/
-ChatBot/settings.py
 
 #Docker
 Dockerfile
