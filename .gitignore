@@ -16,7 +16,8 @@ local_settings.py
 *.env
 .env.*
 
-
+./logs/
+./db.sqlite3
 db.sqlite3
 db.sqlite3-journal
 
