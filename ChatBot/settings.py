@@ -20,11 +20,12 @@ DEBUG = os.getenv("DEBUG")
 
 
 ALLOWED_HOSTS = (
-    ["127.0.0.1", "localhost"]
+    ["127.0.0.1", "localhost", "chatbot-xd4c.onrender.com"]
     if DEBUG
     else [
         "pempi2022.pythonanywhere.com",
         "www.pempi2022.pythonanywhere.com" ".supabase.co",
+        "chatbot-xd4c.onrender.com",
     ]
 )
 
