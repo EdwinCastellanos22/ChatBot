@@ -1,5 +1,6 @@
 # Django-specific files
 *.log
+logs/
 *.pot
 *.pyc
 __pycache__/
