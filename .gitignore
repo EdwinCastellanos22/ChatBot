@@ -6,19 +6,8 @@
 *.pyd
 __pycache__/
 *.so
-##############################################
-# DJANGO / PYTHON
-##############################################
-*.pyc
-*.pyo
-*.pyd
-__pycache__/
-*.so
 *.log
 *.pot
-*.mo
-
-
 *.mo
 
 
@@ -28,28 +17,7 @@ local_settings.py
 .env.*
 
 
-.env
-*.env
-.env.*
-
-./logs/
-./db.sqlite3
 db.sqlite3
-db.sqlite3-journal
-
-##############################################
-# MEDIA & STATIC
-##############################################
-
-media/
-
-staticfiles/
-
-static/
-
-##############################################
-# VIRTUAL ENVS
-##############################################
 db.sqlite3-journal
 
 ##############################################
@@ -77,16 +45,6 @@ ENV/
 
 .vscode/
 
-ENV/
-.venv/
-.python-version
-
-##############################################
-# IDEs
-##############################################
-
-.vscode/
-
 .idea/
 
 *.sublime-project
@@ -95,54 +53,6 @@ ENV/
 ##############################################
 # DOCKER
 ##############################################
-docker-compose.yml
-docker-compose.override.yml
-
-docker-data/
-docker-volumes/
-
-##############################################
-# TESTING
-##############################################
-.coverage
-coverage.xml
-htmlcov/
-.tox/
-pytest_cache/
-.junit/
-
-##############################################
-# NODE / FRONTEND
-##############################################
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-dist/
-build/
-
-##############################################
-# OS FILES
-##############################################
-.DS_Store
-Thumbs.db
-
-##############################################
-# OTHER
-##############################################
-*.egg-info/
-.eggs/
-*.pid
-*.log
-*.backup
-*.sublime-project
-*.sublime-workspace
-
-##############################################
-# DOCKER
-##############################################
-Dockerfile
-docker-compose.yml
 docker-compose.override.yml
 
 docker-data/
