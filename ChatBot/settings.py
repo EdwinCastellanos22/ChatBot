@@ -20,7 +20,7 @@ DEBUG = os.getenv("DEBUG")
 
 
 ALLOWED_HOSTS = (
-    ["127.0.0.1", "localhost", "chatbot-xd4c.onrender.com"]
+    ["127.0.0.1", "localhost", "chatbot-xd4c.onrender.com", "192.168.1.25"]
     if DEBUG
     else [
         "pempi2022.pythonanywhere.com",
@@ -29,6 +29,21 @@ ALLOWED_HOSTS = (
     ]
 )
 
+# SETTINGS CRSF ORIGINS
+CSRF_TRUSTED_ORIGINS = [
+    "https://pempi2022.pythonanywhere.com",
+    "https://www.pempi2022.pythonanywhere.com",
+    "https://supabase.co",
+    "https://chatbot-xd4c.onrender.com",
+]
+
+# SETTINGS CORS ORIGINS
+CORS_ALLOWED_ORIGINS = [
+    "https://pempi2022.pythonanywhere.com",
+    "https://www.pempi2022.pythonanywhere.com",
+    "https://supabase.co",
+    "https://chatbot-xd4c.onrender.com",
+]
 
 # Application definition
 
@@ -40,6 +55,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "chat",
     "api",
+    "dashboard",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -91,8 +107,8 @@ DATABASES = {
         "USER": os.getenv("DB_USERNAME"),
         "PASSWORD": os.getenv("DB_PASSWORD"),
         "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT", "5432"),
-        "OPTIONS": {"sslmode": "disable", "options": "-c search_path=app"},
+        "PORT": os.getenv("DB_PORT"),
+        "OPTIONS": {"sslmode": "require", "options": "-c search_path=public"},
     }
 }
 

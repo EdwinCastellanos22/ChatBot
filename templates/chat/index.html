@@ -27,6 +27,19 @@
       <div class="d-flex align-items-center gap-2">
         {% if user.is_authenticated %}
         <span class="badge badge-user"><i class="fa-solid fa-user-circle me-1"></i>{{ user.username }}</span>
+        <span class="badge badge-user"><i class="fa-solid fa-user-circle me-1"></i>{{ user.email }}</span>
+        {% if user.is_superuser %}
+        <span class="badge badge-superuser"><i class="fa-solid fa-user-circle me-1"></i>Superuser</span>
+        {% endif %}
+        {% if user.is_staff %}
+        <span class="badge badge-superuser"><i class="fa-solid fa-user-circle me-1"></i>Staff</span>
+        <a href="{% url 'admin:index' %}" class="btn btn-outline-light btn-sm">
+          <i class="bi bi-person-rolodex"></i> Admin
+        </a>
+        <a href="{% url 'dashboard' %}" class="btn btn-outline-light btn-sm">
+          <i class="fa-solid fa-chart-line"></i> Dashboard
+        </a>
+        {% endif %}
         {% endif %}
         <form action="{% url 'logout' %}" method="post" class="d-inline">
           {% csrf_token %}
@@ -42,7 +55,7 @@
   <div class="container-fluid flex-grow-1 py-2">
     <div class="row h-100 g-3">
 
-      <!-- Salas (Sidebar izquierda) -->
+      <!-- Salas -->
       <!-- Botón solo en móvil -->
       <button class="btn btn-primary w-100 d-lg-none mb-2" type="button" data-bs-toggle="collapse"
         data-bs-target="#roomsMenu">
@@ -74,7 +87,7 @@
       <div class="col-md-6 col-lg-7 chat-wrap">
         <div class="d-flex justify-content-between align-items-center">
           <h5 class="mb-0"><i class="fa-solid fa-message me-2"></i>Mensajes</h5>
-          <span class="text-light opacity-75 small">Los mensajes en esta sala son temporales.</span>
+          <span class="text-dark2 opacity-75 small">Los mensajes en esta sala son temporales.</span>
         </div>
 
         <!-- Mensajes -->
@@ -124,9 +137,7 @@
   </div>
 
   <script>
-    // Exponemos username para tu index.js (websocket)
     username = "{{ user.username }}";
-    // Auto-scroll al final al cargar
     window.addEventListener('load', () => {
       const box = document.getElementById('chat-messages');
       if (box) box.scrollTop = box.scrollHeight;

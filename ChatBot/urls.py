@@ -1,16 +1,22 @@
-
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from chat.views import RegisterView
 
+from django.shortcuts import render
+
+
+def home(request):
+    return render(request, "index.html")
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("chat/", include('chat.urls')),
-    path("account/", include('django.contrib.auth.urls')),
+    path("admin/", admin.site.urls),
+    path("", home, name="home"),
+    path("chat/", include("chat.urls")),
+    path("account/", include("django.contrib.auth.urls")),
     path("account/register/", RegisterView.as_view(), name="register"),
-    path("api/", include('api.urls')),
+    path("api/", include("api.urls")),
+    path("dashboard/", include("dashboard.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
