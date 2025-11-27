@@ -110,3 +110,12 @@ def sendNotificationToUser(request):
         }
     )
     return JsonResponse({"success": True, "message": "Notification sent successfully"})
+
+
+def room(request, room_id):
+    try:
+        room = Room.objects.get(id=room_id)
+        messages = Message.objects.filter(room=room)
+    except Room.DoesNotExist:
+        return render(request, "utils/404.html", {"message": "Oops! Room not found"})
+    return render(request, "chat/room.html", {"room": room, "messages": messages})

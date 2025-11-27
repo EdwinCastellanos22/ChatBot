@@ -18,35 +18,60 @@
 <body class="bg-light vh-100 d-flex flex-column">
 
   <!-- Header -->
-  <nav class="navbar navbar-dark neon shadow-sm ">
+  <nav class="navbar navbar-dark neon shadow-sm">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">
         <i class="fa-solid fa-robot"></i> ChatBot
       </span>
 
       <div class="d-flex align-items-center gap-2">
+
         {% if user.is_authenticated %}
-        <span class="badge badge-user"><i class="fa-solid fa-user-circle me-1"></i>{{ user.username }}</span>
-        <span class="badge badge-user"><i class="fa-solid fa-user-circle me-1"></i>{{ user.email }}</span>
+        <!-- Username -->
+        <span class="badge badge-user">
+          <i class="fa-solid fa-user-circle me-1"></i>{{ user.username }}
+        </span>
+
+        <!-- Email -->
+        <span class="badge badge-user">
+          <i class="fa-solid fa-envelope me-1"></i>{{ user.email }}
+        </span>
+
+        <!-- Superuser -->
         {% if user.is_superuser %}
-        <span class="badge badge-superuser"><i class="fa-solid fa-user-circle me-1"></i>Superuser</span>
+        <span class="badge badge-superuser"
+          style="background:rgba(255,0,157,.25);border:1px solid rgba(255,0,157,.5);backdrop-filter:blur(6px);">
+          <i class="fa-solid fa-crown me-1"></i>Superuser
+        </span>
         {% endif %}
+
+        <!-- Staff -->
         {% if user.is_staff %}
-        <span class="badge badge-superuser"><i class="fa-solid fa-user-circle me-1"></i>Staff</span>
+        <span class="badge badge-superuser"
+          style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);">
+          <i class="fa-solid fa-shield-halved me-1"></i>Staff
+        </span>
+
+        <!-- Admin link -->
         <a href="{% url 'admin:index' %}" class="btn btn-outline-light btn-sm">
-          <i class="bi bi-person-rolodex"></i> Admin
+          <i class="fa-solid fa-user-gear"></i> Admin
         </a>
+
+        <!-- Dashboard -->
         <a href="{% url 'dashboard' %}" class="btn btn-outline-light btn-sm">
           <i class="fa-solid fa-chart-line"></i> Dashboard
         </a>
         {% endif %}
         {% endif %}
+
+        <!-- Logout -->
         <form action="{% url 'logout' %}" method="post" class="d-inline">
           {% csrf_token %}
           <button type="submit" class="btn btn-outline-light btn-sm">
             <i class="fa-solid fa-right-from-bracket"></i> Salir
           </button>
         </form>
+
       </div>
     </div>
   </nav>
@@ -55,8 +80,7 @@
   <div class="container-fluid flex-grow-1 py-2">
     <div class="row h-100 g-3">
 
-      <!-- Salas -->
-      <!-- Botón solo en móvil -->
+      <!-- Botón salas en móvil -->
       <button class="btn btn-primary w-100 d-lg-none mb-2" type="button" data-bs-toggle="collapse"
         data-bs-target="#roomsMenu">
         <i class="fa-solid fa-door-open me-2"></i> Salas
@@ -64,11 +88,16 @@
 
       <!-- Sidebar izquierda -->
       <div class="col-lg-2 sidebar p-3 rounded-end collapse d-lg-block" id="roomsMenu">
-        <h5 class="section-title mb-3"><i class="fa-solid fa-door-open me-2"></i>Salas</h5>
+        <h5 class="section-title mb-3">
+          <i class="fa-solid fa-door-open me-2"></i> Salas
+        </h5>
+
         <div class="list-group">
+
           <a class="list-group-item list-group-item-action active">
-            <i class="fa-solid fa-house me-2"></i>Chat general
+            <i class="fa-solid fa-house me-2"></i> Chat general
           </a>
+
           {% for room in rooms %}
           <a class="list-group-item list-group-item-action d-flex align-items-center">
             {% if room.name == 'Admin' %}
@@ -82,12 +111,17 @@
         </div>
       </div>
 
-
       <!-- Chat principal -->
       <div class="col-md-6 col-lg-7 chat-wrap">
         <div class="d-flex justify-content-between align-items-center">
-          <h5 class="mb-0"><i class="fa-solid fa-message me-2"></i>Mensajes</h5>
-          <span class="text-dark2 opacity-75 small">Los mensajes en esta sala son temporales.</span>
+          <h5 class="mb-0">
+            <i class="fa-solid fa-message me-2"></i> Mensajes
+          </h5>
+
+          <!-- Cambiado text-dark2 → text-light-muted -->
+          <span class="text-light small opacity-75">
+            Los mensajes en esta sala son temporales.
+          </span>
         </div>
 
         <!-- Mensajes -->
@@ -115,21 +149,29 @@
           {% endfor %}
         </div>
 
-        <!-- Formulario -->
+        <!-- Input -->
         <form id="chat-form" class="input-group">
-          <input type="text" name="message" id="message" class="form-control" placeholder="Escribe algo..." autofocus>
+          <input type="text" name="message" id="message" class="form-control" placeholder="Escribe algo..."
+            autocomplete="off">
           <button type="submit" class="btn btn-success" id="send-btn">
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </form>
       </div>
 
-      <!-- Usuarios / Notificaciones (Sidebar derecha) -->
+      <!-- Sidebar derecha -->
       <div class="col-md-3 col-lg-3 sidebar right p-3 rounded-start">
-        <h5 class="section-title mb-3"><i class="fa-solid fa-bell me-2"></i>Notificaciones</h5>
+
+        <h5 class="section-title mb-3">
+          <i class="fa-solid fa-bell me-2"></i> Notificaciones
+        </h5>
+
         <div id="notifications" class="panel mb-4"></div>
 
-        <h5 class="section-title mb-3"><i class="fa-solid fa-users me-2"></i>Usuarios en esta sala</h5>
+        <h5 class="section-title mb-3">
+          <i class="fa-solid fa-users me-2"></i> Usuarios en esta sala
+        </h5>
+
         <ul class="list-group" id="users"></ul>
       </div>
 
@@ -138,6 +180,7 @@
 
   <script>
     username = "{{ user.username }}";
+
     window.addEventListener('load', () => {
       const box = document.getElementById('chat-messages');
       if (box) box.scrollTop = box.scrollHeight;
@@ -148,6 +191,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="{% static 'chat/js/index.js' %}"></script>
+
 </body>
 
 </html>

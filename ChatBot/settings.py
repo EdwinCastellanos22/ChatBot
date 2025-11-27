@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import socket
 
 load_dotenv()
 
@@ -20,7 +21,12 @@ DEBUG = os.getenv("DEBUG")
 
 
 ALLOWED_HOSTS = (
-    ["127.0.0.1", "localhost", "chatbot-xd4c.onrender.com", "192.168.1.25"]
+    [
+        "127.0.0.1",
+        "localhost",
+        "chatbot-xd4c.onrender.com",
+        "192.168.1.13",
+    ]
     if DEBUG
     else [
         "pempi2022.pythonanywhere.com",

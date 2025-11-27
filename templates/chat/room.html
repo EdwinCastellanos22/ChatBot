@@ -1,0 +1,110 @@
+{% extends '_layout.html' %}
+{% load static %}
+
+
+{% block title %}
+{{ room.name }}
+{% endblock %}
+
+{% block styles %}
+<style>
+    .badge-user {
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .35);
+    }
+
+    .badge-superuser {
+        background: rgba(255, 0, 157, .25);
+        border: 1px solid rgba(255, 0, 157, .5);
+        backdrop-filter: blur(6px);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-3">
+
+    <div class="row">
+        <!-- BOTÓN ATRÁS -->
+        <div class="col-12 mb-3">
+            <a href="{% url 'home' %}" class="btn btn-secondary">
+                <i class="fa-solid fa-arrow-left"></i> Regresar
+            </a>
+        </div>
+
+        <!-- CHAT A LA IZQUIERDA -->
+        <div class="col-md-8">
+
+            <!-- Encabezado -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">
+                    <i class="fa-solid fa-comments me-2"></i> {{ room.name }}
+                </h4>
+
+                <!-- Botón unirme -->
+                <button class="btn btn-primary" id="join-btn">
+                    <i class="fa-solid fa-door-open"></i> Unirme al chat
+                </button>
+            </div>
+
+            <!-- Mensajes (90% de pantalla vertical) -->
+            <div id="chat-messages" class="border rounded p-3 mb-3 shadow-sm" style="height: 70vh; overflow-y: auto;">
+
+                {% for message in messages %}
+                {% if message.user == user %}
+                <div class="text-end mb-3">
+                    <span class="badge bg-primary mb-1">{{ message.user.username }}</span>
+                    <div class="p-2 bg-primary text-white d-inline-block rounded">
+                        {{ message.content }}
+                    </div>
+
+                </div>
+                {% else %}
+                <div class="text-start mb-3">
+                    <span class="badge bg-secondary mb-1">{{ message.user.username }}</span>
+                    <div class="p-2 bg-light border d-inline-block rounded">
+                        {{ message.content }}
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <!-- Input deshabilitado si no se ha unido -->
+            <form id="chat-form" class="input-group">
+                <input type="text" id="message" name="message" class="form-control" placeholder="Escribe un mensaje..."
+                    autocomplete="off">
+
+                <button class="btn btn-success" id="send-btn" type="submit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- LISTA DE MIEMBROS A LA DERECHA -->
+        <div class="col-md-4">
+            <div class="border rounded p-3 shadow-sm">
+
+                <h5 class="mb-3">
+                    <i class="fa-solid fa-users me-2"></i> Miembros en la sala
+                </h5>
+
+                <ul class="list-group" id="users">
+                    <li class="list-group-item">Unirse para ver los miembros</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    const room = "{{ room.id }}";
+    const userName = "{{ user.username }}";
+
+</script>
+<script type="module" src="{% static 'chat/js/room.js' %}"></script>
+{% endblock %}

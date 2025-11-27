@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Estilos del chat -->
+    <link rel="stylesheet" href="{% static 'chat/css/index.css' %}">
+
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-dark neon shadow-sm">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+                <i class="fa-solid fa-robot"></i> ChatBot
+            </span>
+
+            <div class="d-flex align-items-center gap-2">
+
+                {% if user.is_authenticated %}
+                <!-- Username -->
+                <span class="badge badge-user">
+                    <i class="fa-solid fa-user-circle me-1"></i>{{ user.username }}
+                </span>
+
+                <!-- Email -->
+                <span class="badge badge-user">
+                    <i class="fa-solid fa-envelope me-1"></i>{{ user.email }}
+                </span>
+
+                <!-- Superuser -->
+                {% if user.is_superuser %}
+                <span class="badge badge-superuser"
+                    style="background:rgba(255,0,157,.25);border:1px solid rgba(255,0,157,.5);backdrop-filter:blur(6px);">
+                    <i class="fa-solid fa-crown me-1"></i>Superuser
+                </span>
+                {% endif %}
+
+                <!-- Staff -->
+                {% if user.is_staff %}
+                <span class="badge badge-superuser"
+                    style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);">
+                    <i class="fa-solid fa-shield-halved me-1"></i>Staff
+                </span>
+
+                <!-- Admin link -->
+                <a href="{% url 'admin:index' %}" class="btn btn-outline-light btn-sm">
+                    <i class="fa-solid fa-user-gear"></i> Admin
+                </a>
+
+                <!-- Dashboard -->
+                <a href="{% url 'dashboard' %}" class="btn btn-outline-light btn-sm">
+                    <i class="fa-solid fa-chart-line"></i> Dashboard
+                </a>
+                {% endif %}
+                {% endif %}
+
+                <!-- Logout -->
+                <form action="{% url 'logout' %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-light btn-sm">
+                        <i class="fa-solid fa-right-from-bracket"></i> Salir
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const username = "{{ user.username }}";
+    </script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>
