@@ -133,7 +133,7 @@
               <div class="author mb-1">
                 <span class="badge">{{ message.user.username }}</span>
               </div>
-              <div class="bubble">{{ message.content }}</div>
+              <div class="bubble">{{ message.content|escape }}</div>
             </div>
           </div>
           {% else %}
@@ -142,7 +142,7 @@
               <div class="author mb-1">
                 <span class="badge">{{ message.user.username }}</span>
               </div>
-              <div class="bubble">{{ message.content }}</div>
+              <div class="bubble">{{ message.content|escape }}</div>
             </div>
           </div>
           {% endif %}

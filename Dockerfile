@@ -1,10 +1,5 @@
 FROM python:3.12-slim
 
-ENV PYTHONUNBUFFERED=1
-
-# Force IPv4 (fix Supabase connections on Render)
-RUN echo 'precedence ::ffff:0:0/96  100' >> /etc/gai.conf
-
 WORKDIR /chatbot
 
 COPY requirements.txt /chatbot/

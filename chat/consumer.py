@@ -5,6 +5,10 @@ import json
 import logging
 import os
 from dotenv import load_dotenv
+import html
+
+#celery
+from .tasks import analize_message
 
 logger = logging.getLogger("chat")
 load_dotenv()
@@ -97,7 +101,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
         if self.redis:
             await self.redis.close()
-
+            
+    
     async def receive(self, text_data):
         data = json.loads(text_data)
 
@@ -124,19 +129,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
             return
 
         # Normal message
-        message = data.get("message")
-        if message:
-            logger.info(f"Message from {self.username}: {message}")
-
-            await self.channel_layer.group_send(
-                self.room_name,
-                {
-                    "type": "chat_message",
-                    "message": message,
-                    "username": self.username,
-                    "timestamp": utc_now(),
-                },
-            )
+        message = html.escape(data.get("message"))
+        analize_message.delay(message=message,  group_name=self.room_name, username=self.username)
 
     async def chat_message(self, event):
         await self.send(
@@ -169,3 +163,29 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     async def status_offline(self, event):
         await self.send(json.dumps(event))
+        
+    async def moderation(self, event):
+        if event['result'] :
+            await self.channel_layer.group_send(
+                self.room_name,
+                {
+                    "type": "notification",
+                    "message": f"Mensaje de {event['username']} bloqueado por contenido ofensivo.",
+                    "username": "System",
+                    "timestamp": utc_now(),
+                },
+            )
+            
+        else:
+            message = html.escape(event["message"])
+            logger.info(f"Message from {self.username}: {message}")
+
+            await self.channel_layer.group_send(
+                self.room_name,
+                {
+                    "type": "chat_message",
+                    "message": message,
+                    "username": self.username,
+                    "timestamp": utc_now(),
+                },
+            )

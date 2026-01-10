@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "chat",
     "api",
+    "django_celery_results",
     "dashboard",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -173,9 +174,10 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [
-                os.getenv("REDIS_URL"),
-            ],
+            "hosts": [{
+                "address": os.getenv("CELERY_BROKER_URL"),
+                "ssl_cert_reqs": None
+        }],
         },
     },
 }
@@ -281,3 +283,9 @@ LOGGING = {
         },
     },
 }
+
+# SETTINGS CELERY
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_BACKEND = "django-db"
